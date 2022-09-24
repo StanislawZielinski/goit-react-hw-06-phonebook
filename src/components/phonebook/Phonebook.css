@@ -1,12 +1,21 @@
 .wrapper {
+    min-height: 500px;
+    width: 350px;
     border: solid 2px black;
+    background-image: url("../../images/open-book-book.svg");
+    background-color: #cccccc;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: relative;
+    font-weight: 700;
 }
 .label {
     font-size: 14px;
 }
 .input {
-    margin: 5px;
-    border: solid 2px lightgreen;
+    margin: 10px;
+    border: solid 2px black;
 }
 .filter-title {
     margin-bottom: 1px;
@@ -19,18 +28,22 @@
     align-items:center;
 }
 .button {
-    background-color: aquamarine;
+    background-color: lightcoral;
     width: 50%;
     font-size: 14px;
-    margin-bottom: 4px;
+    margin-bottom: 15px;
+    min-height: 35px;
 }
 .button:hover {
     cursor: pointer;
+    background-color: black;
+    color: white;
 }
 .contacts {
     font-size: 14px;
 }
 .title {
+    margin-top: 15px;
     margin-bottom: 5px;
 }
 .button-contact {
