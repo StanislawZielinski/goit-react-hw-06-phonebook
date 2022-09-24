@@ -22,7 +22,6 @@
     font-size: 14px;
 }
 .form {
-    border-bottom: solid 2px black;
     display: flex;
     flex-direction: column;
     align-items:center;
@@ -39,6 +38,7 @@
     background-color: black;
     color: white;
 }
+
 .contacts {
     font-size: 14px;
 }
@@ -55,6 +55,8 @@
 
 .button-contact:hover {
     cursor: pointer;
+    background-color: black;
+    color: white;
 }
 .input-wrapper {
     display: flex;
@@ -65,4 +67,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+.contactsList-wrapper{
+    margin-top: 10px;
 }

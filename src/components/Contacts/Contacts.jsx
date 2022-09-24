@@ -4,9 +4,7 @@ import PropTypes from "prop-types";
 const Contacts = ({ renderContacts, filter, contacts }) => {
         
         return (
-            <div>
-                <ul>{renderContacts(filter, contacts)}</ul>
-            </div>
+                <ul className="contactsList-wrapper">{renderContacts(filter, contacts)}</ul>
     )}
 export default Contacts
 
