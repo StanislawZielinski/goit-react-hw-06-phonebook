@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 const DeleteBtn = ({deleteContact, id}) => {
             return (
@@ -6,3 +7,8 @@ const DeleteBtn = ({deleteContact, id}) => {
             )
 } 
 export default DeleteBtn
+
+DeleteBtn.propTypes = {
+    deleteContact: PropTypes.func.isRequired,
+    id: PropTypes.string.isRequired,
+}

@@ -1,6 +1,5 @@
 import React from "react";
-
-// pamietaj filter w argumentach i parametrach
+import PropTypes from "prop-types";
 
 const Contacts = ({ renderContacts, filter, contacts }) => {
         
@@ -10,3 +9,9 @@ const Contacts = ({ renderContacts, filter, contacts }) => {
             </div>
     )}
 export default Contacts
+
+Contacts.propTypes = {
+    renderContacts: PropTypes.func.isRequired,
+    filter: PropTypes.string,
+    contacts: PropTypes.array,
+}

@@ -1,5 +1,5 @@
 import React from "react";
-
+import PropTypes from "prop-types";
 
 const Form = ({handleSubmit}) => {
     
@@ -34,3 +34,7 @@ const Form = ({handleSubmit}) => {
 }
 
 export default Form
+
+Form.propTypes = {
+    handleSubmit: PropTypes.func.isRequired,
+}
