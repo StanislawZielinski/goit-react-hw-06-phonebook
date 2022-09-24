@@ -1,7 +1,6 @@
 import React from "react";
 
 const Filter = ({onChange}) => {
-
         return (
             <div>
                 <p className="title">Contacts</p>

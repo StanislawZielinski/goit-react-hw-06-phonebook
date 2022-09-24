@@ -1,7 +1,5 @@
-import { configureStore, createReducer, current } from "@reduxjs/toolkit";
-import { addContact, deleteContact } from "../redux/actions";
-import { nanoid } from 'nanoid';
-import { useSelector, useDispatch } from "react-redux";
+import { configureStore, createReducer } from "@reduxjs/toolkit";
+import { addContact, deleteContact, filterContact } from "../redux/actions";
 
 const defaultContacts =
     [
@@ -11,30 +9,24 @@ const defaultContacts =
         { id: 'id-4', name: 'Annie Copeland', number: '227-91-26' },
     ];
 
-    // const localStorageContacts = (JSON.parse(localStorage.getItem("newState")))===null ? (defaultContacts) : 
-    // (JSON.parse(localStorage.getItem("newState")))
+const localStorageContacts = (JSON.parse(localStorage.getItem("newState")))===null ? (defaultContacts) : 
+(JSON.parse(localStorage.getItem("newState")))
 
-
-        // useEffect(() => {
-        //     localStorage.setItem("newState", JSON.stringify(contacts));
-        // }, [contacts]);
-
-const INIT_STATE = defaultContacts;
-
-// setContacts([...contacts, { name: name, id: nanoid(), number: phoneNumber }]);
+const INIT_STATE = {
+    items: localStorageContacts,
+    filter: '',
+} ;
 
 const contacts = createReducer(INIT_STATE, {
-    [addContact]: (state, action) => (console.log(current(state)), [...state, action.payload]),
-    [deleteContact]: (state, action) => (console.log(current(state)), [...action.payload]),
+    [addContact]: (state, action) => { state.items = [...state.items,action.payload] },
+    [deleteContact]: (state, action) => { state.items = [...action.payload] },
+    [filterContact]: (state, action) => {state.filter = action.payload},
 }); 
 
-   
 const store = configureStore({
     reducer: {
-        contacts,
+        contacts
     },
 });
-
-
 
 export default store;
